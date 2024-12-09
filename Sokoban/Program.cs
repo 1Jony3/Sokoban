@@ -1,3 +1,2 @@
-﻿
-using var game = new Sokoban.Game1();
+﻿using var game = new Sokoban.SokobanGame();
 game.Run();

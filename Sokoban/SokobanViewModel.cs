@@ -10,26 +10,27 @@ namespace Sokoban
 {
     internal class SokobanViewModel : INotifyPropertyChanged
     {
-        private SokobanModel _model;
+        private SokobanModel model;
 
         public SokobanViewModel(char[,] warehouse, int startX, int startY)
         {
             IPlayer warehouseman = new Warehouseman(startX, startY);
-            _model = new SokobanModel(warehouse, warehouseman);
+            model = new SokobanModel(warehouse, warehouseman);
         }
 
         public void MovePlayer(int deltaX, int deltaY)
         {
-            _model.MovePlayer(deltaX, deltaY);
+            model.MovePlayer(deltaX, deltaY);
             OnPropertyChanged(nameof(Warehouse));
         }
 
-        public char[,] Warehouse => _model.Warehouse;
+        public char[,] Warehouse => model.Warehouse;
 
-        public IPlayer Warehouseman => _model.Warehouseman;
-        public List<IPlayer> Boxes => _model.Boxes;
+        public IPlayer Warehouseman => model.Warehouseman;
+        public List<IPlayer> Boxes => model.Boxes;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

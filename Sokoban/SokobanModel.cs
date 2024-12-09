@@ -46,7 +46,6 @@ namespace Sokoban
                         BoxInTheRightPlace(boxNewX, boxNewY);                                                
                     }
                 } 
-                //if (Warehouse[newY, newX] == 'C') 
             }
             if (canMove == true) MovingPlayer(deltaX, deltaY);
         }
@@ -74,7 +73,8 @@ namespace Sokoban
         
         private void BoxInTheRightPlace(int boxNewX, int boxNewY)
         {
-            if (Warehouse[boxNewY, boxNewX] == 'C') Warehouse[boxNewY, boxNewX] = 'A'; // Перемещаем ящик и активируем
+            if (Warehouse[boxNewY, boxNewX] == 'C') 
+                Warehouse[boxNewY, boxNewX] = 'A'; // Перемещаем ящик и активируем
             else Warehouse[boxNewY, boxNewX] = 'B'; // Перемещаем ящик
         }
     }

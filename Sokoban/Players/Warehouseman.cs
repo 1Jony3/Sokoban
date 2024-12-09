@@ -16,7 +16,6 @@ namespace Sokoban.Players
             LocalX = startX;
             LocalY = startY;
         }
-
         public void Move(int deltaX, int deltaY)
         {
             LocalX += deltaX;
